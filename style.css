@@ -1,3 +1,11 @@
+@font-face {
+    font-family: StratosSkyeng;
+    src: url(/Шрифт\ Stratos\ \(1\)/);
+}
+
+body{
+    background-color: #004980;   
+}
 .page{
     height: 774px;
     background-color: #004980;
