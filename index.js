@@ -1,7 +1,7 @@
-let difficultyOfGames = 0;
+let difficultyOfGames = 0
 
-let appEl = document.getElementById("app");
-console.log(appEl);
+let appEl = document.getElementById('app')
+console.log(appEl)
 
 appHtml = `<div id="page" class="page">
 <div class="choose-level">
@@ -12,56 +12,53 @@ appHtml = `<div id="page" class="page">
         <div id="difficult-level" class="level">3</div>
     </div>
     <button id="button" class="button">Старт</button>
-</div>`;
+</div>`
 
-appEl.innerHTML = appHtml;
+appEl.innerHTML = appHtml
 
-let gameHtml;
+let gameHtml
 
+let easyLevelElement = document.getElementById('easy-level')
+console.log(easyLevelElement)
 
+easyLevelElement.addEventListener('click', () => {
+    difficultyOfGames = 1
+    easyLevelElement.classList.add('active')
+    mediumLevelElement.classList.remove('active')
+    difficultLevelElement.classList.remove('active')
+    console.log(difficultyOfGames)
+})
 
-let easyLevelElement = document.getElementById("easy-level");
-console.log(easyLevelElement);
+let mediumLevelElement = document.getElementById('medium-level')
+console.log(mediumLevelElement)
 
-easyLevelElement.addEventListener("click", () => {
-    difficultyOfGames = 1;
-    easyLevelElement.classList.add("active");
-    mediumLevelElement.classList.remove("active");
-    difficultLevelElement.classList.remove("active");
-    console.log(difficultyOfGames);
-});
+mediumLevelElement.addEventListener('click', () => {
+    difficultyOfGames = 2
+    easyLevelElement.classList.remove('active')
+    mediumLevelElement.classList.add('active')
+    difficultLevelElement.classList.remove('active')
+    console.log(difficultyOfGames)
+})
 
-let mediumLevelElement = document.getElementById("medium-level");
-console.log(mediumLevelElement);
+let difficultLevelElement = document.getElementById('difficult-level')
+console.log(difficultLevelElement)
 
-mediumLevelElement.addEventListener("click", () => {
-    difficultyOfGames = 2;
-    easyLevelElement.classList.remove("active");
-    mediumLevelElement.classList.add("active");
-    difficultLevelElement.classList.remove("active");
-    console.log(difficultyOfGames);
-});
+difficultLevelElement.addEventListener('click', () => {
+    difficultyOfGames = 3
+    easyLevelElement.classList.remove('active')
+    mediumLevelElement.classList.remove('active')
+    difficultLevelElement.classList.add('active')
+    console.log(difficultyOfGames)
+})
 
-let difficultLevelElement = document.getElementById("difficult-level");
-console.log(difficultLevelElement);
+console.log(difficultyOfGames)
 
-difficultLevelElement.addEventListener("click", () => {
-    difficultyOfGames = 3;
-    easyLevelElement.classList.remove("active");
-    mediumLevelElement.classList.remove("active");
-    difficultLevelElement.classList.add("active");
-    console.log(difficultyOfGames);
-});
-
-console.log(difficultyOfGames);
-
-const buttonElement = document.getElementById("button");
-buttonElement.addEventListener("click", () => {
+const buttonElement = document.getElementById('button')
+buttonElement.addEventListener('click', () => {
     if (difficultyOfGames === 0) {
-        alert("Вы не выбрали сложность игры");
-    }
-    else if(difficultyOfGames === 1) {
-        console.log("1 level");
+        alert('Вы не выбрали сложность игры')
+    } else if (difficultyOfGames === 1) {
+        console.log('1 level')
         gameHtml = `
         <div id="page" class="page">
         <svg width="95" height="133" viewBox="0 0 95 133" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,13 +71,10 @@ buttonElement.addEventListener("click", () => {
 </svg>
 
         </div>
-        `;
-        appEl.innerHTML = gameHtml;
-
-
-    }
-    else if(difficultyOfGames === 2) {
-        console.log("2 level");
+        `
+        appEl.innerHTML = gameHtml
+    } else if (difficultyOfGames === 2) {
+        console.log('2 level')
         gameHtml = `
         <div id="page" class="page">
         <svg width="95" height="133" viewBox="0 0 95 133" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,11 +88,10 @@ buttonElement.addEventListener("click", () => {
 
 
         </div>
-        `;
-        appEl.innerHTML = gameHtml;
-    }
-    else if(difficultyOfGames === 3) {
-        console.log("3 level");
+        `
+        appEl.innerHTML = gameHtml
+    } else if (difficultyOfGames === 3) {
+        console.log('3 level')
         gameHtml = `
         <div id="page" class="page">
         <svg width="95" height="133" viewBox="0 0 95 133" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,8 +104,7 @@ buttonElement.addEventListener("click", () => {
 </svg>
 
         </div>
-        `;
-        appEl.innerHTML = gameHtml;
-    };
-    
+        `
+        appEl.innerHTML = gameHtml
+    }
 })
