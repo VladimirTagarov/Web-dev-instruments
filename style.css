@@ -1,12 +1,12 @@
 @font-face {
     font-family: StratosSkyeng;
-    src: url("/fonts/statosskyeng-v1.001/DesktopFonts/stratosskyeng-medium.otf");
+    src: url('/fonts/statosskyeng-v1.001/DesktopFonts/stratosskyeng-regular.otf');
 }
 
-body{
-    background-color: #004980;   
+body {
+    background-color: #004980;
 }
-.page{
+.page {
     height: 774px;
     background-color: #004980;
     display: flex;
@@ -15,19 +15,18 @@ body{
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.choose-level{
+.choose-level {
     width: 480px;
     height: 459px;
     border-radius: 12px;
-    background: #C2F5FF;
+    background: #c2f5ff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 50px;
-    
 }
-.page__text{
+.page__text {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #004980;
@@ -38,16 +37,16 @@ body{
     line-height: 48px;
     text-align: center;
 }
-.levels{
+.levels {
     display: flex;
     flex-direction: row;
     gap: 26px;
 }
-.level{
+.level {
     width: 97px;
     height: 98px;
     background-color: #ffffff;
-    color: #0080C1;
+    color: #0080c1;
     text-align: center;
     font-size: 64px;
     font-family: StratosSkyeng;
@@ -59,20 +58,87 @@ body{
     align-items: center;
     justify-content: center;
 }
-.button{
+.button {
     background-color: #7ac100;
     border-radius: 12px;
     border: none;
     width: 246px;
     height: 48px;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-size: 24px;
     font-family: StratosSkyeng;
     font-style: normal;
     font-weight: 400;
     line-height: 32px;
+    vertical-align: center;
 }
-.active{
+.active {
     background-color: grey;
+}
+.game-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 22px;
+}
+.game-page__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-page__time {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.game-page__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    font-family: StratosSkyeng;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: right;
+    gap: 57px;
+}
+.game-page__timer {
+    color: #fff;
+    font-family: StratosSkyeng;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    margin: 0px;
+}
+.game-page__cards {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-items: center;
+}
+.game-page__cards-easy {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-items: center;
+}
+.game-page__cards-medium {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-items: center;
+}
+.game-page__cards-difficult {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-items: center;
 }
