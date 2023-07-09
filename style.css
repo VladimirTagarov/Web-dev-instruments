@@ -142,3 +142,6 @@ body {
     row-gap: 15px;
     justify-items: center;
 }
+.img1 {
+    background-image: url(img/рубашка.png);
+}
