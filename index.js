@@ -123,11 +123,26 @@ buttonElement.addEventListener('click', () => {
         appEl.innerHTML = gameHtml
 
         let imgElements = document.querySelectorAll('img')
+        let clickCount = 0
+        let clickedElements = []
 
         for (const imgElement of imgElements) {
             imgElement.addEventListener('click', (event) => {
-                console.log(event.detail)
+                let clickedElement = event.target
+                clickedElements.push(clickedElement)
+                console.log(clickedElements[0])
+                console.log(clickedElements[1])
+                clickCount++
                 imgElement.classList.remove('flip')
+                console.log(imgElement.src)
+                console.log(clickCount)
+                if (clickedElements[0].src === clickedElements[1].src) {
+                    alert('вы выиграли, поздравляю')
+                    location.reload()
+                } else {
+                    alert('вы проиграли, попробуйте снова')
+                    location.reload()
+                }
             })
         }
         setTimeout(() => {
@@ -191,10 +206,26 @@ buttonElement.addEventListener('click', () => {
         `
         appEl.innerHTML = gameHtml
         let imgElements = document.querySelectorAll('img')
+        let clickCount = 0
+        let clickedElements = []
 
         for (const imgElement of imgElements) {
-            imgElement.addEventListener('click', () => {
+            imgElement.addEventListener('click', (event) => {
+                let clickedElement = event.target
+                clickedElements.push(clickedElement)
+                console.log(clickedElements[0])
+                console.log(clickedElements[1])
+                clickCount++
                 imgElement.classList.remove('flip')
+                console.log(imgElement.src)
+                console.log(clickCount)
+                if (clickedElements[0].src === clickedElements[1].src) {
+                    alert('вы выиграли, поздравляю')
+                    location.reload()
+                } else {
+                    alert('вы проиграли, попробуйте снова')
+                    location.reload()
+                }
             })
         }
         setTimeout(() => {
@@ -276,10 +307,26 @@ buttonElement.addEventListener('click', () => {
         `
         appEl.innerHTML = gameHtml
         let imgElements = document.querySelectorAll('img')
+        let clickCount = 0
+        let clickedElements = []
 
         for (const imgElement of imgElements) {
-            imgElement.addEventListener('click', () => {
+            imgElement.addEventListener('click', (event) => {
+                let clickedElement = event.target
+                clickedElements.push(clickedElement)
+                console.log(clickedElements[0])
+                console.log(clickedElements[1])
+                clickCount++
                 imgElement.classList.remove('flip')
+                console.log(imgElement.src)
+                console.log(clickCount)
+                if (clickedElements[0].src === clickedElements[1].src) {
+                    alert('вы выиграли, поздравляю')
+                    location.reload()
+                } else {
+                    alert('вы проиграли, попробуйте снова')
+                    location.reload()
+                }
             })
         }
         setTimeout(() => {
