@@ -71,99 +71,15 @@ let random6 = Math.floor(Math.random() * 36)
 let random7 = Math.floor(Math.random() * 36)
 let random8 = Math.floor(Math.random() * 36)
 let random9 = Math.floor(Math.random() * 36)
-
-function flipCardsEasy() {
-    gameHtml = `
-        <div class="game-page">
-            <div class="game-page__header">
-                <div class="game-page__time">
-                    <div class="game-page__text">
-                        <p class="game-page__text">min</p>
-                        <p class="game-page__text">sec</p>
-                    </div>
-                    <p class="game-page__timer">00.00</p>
-                </div>
-                <div class="button game-page__button">Начать заново</div>
-            </div>
-            <div class="game-page__cards game-page__cards-easy">
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-            </div>
-        `
-    appEl.innerHTML = gameHtml
-}
-
-function flipCardsMedium() {
-    gameHtml = `
-        <div class="game-page">
-            <div class="game-page__header">
-                <div class="game-page__time">
-                    <div class="game-page__text">
-                        <p class="game-page__text">min</p>
-                        <p class="game-page__text">sec</p>
-                    </div>
-                    <p class="game-page__timer">00.00</p>
-                </div>
-                <div class="button game-page__button">Начать заново</div>
-            </div>
-            <div class="game-page__cards game-page__cards-medium">
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-            </div>
-        `
-    appEl.innerHTML = gameHtml
-}
-
-function flipCardsDifficult() {
-    gameHtml = `
-        <div class="game-page">
-            <div class="game-page__header">
-                <div class="game-page__time">
-                    <div class="game-page__text">
-                        <p class="game-page__text">min</p>
-                        <p class="game-page__text">sec</p>
-                    </div>
-                    <p class="game-page__timer">00.00</p>
-                </div>
-                <div class="button game-page__button">Начать заново</div>
-            </div>
-            <div class="game-page__cards game-page__cards-difficult">
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-                <img class="img" src="img/рубашка.png" alt="рубашка карты" />
-            </div>
-        `
-    appEl.innerHTML = gameHtml
-}
+let random10 = Math.floor(Math.random() * 36)
+let random11 = Math.floor(Math.random() * 36)
+let random12 = Math.floor(Math.random() * 36)
+let random13 = Math.floor(Math.random() * 36)
+let random14 = Math.floor(Math.random() * 36)
+let random15 = Math.floor(Math.random() * 36)
+let random16 = Math.floor(Math.random() * 36)
+let random17 = Math.floor(Math.random() * 36)
+let random18 = Math.floor(Math.random() * 36)
 
 const buttonElement = document.getElementById('button')
 buttonElement.addEventListener('click', () => {
@@ -171,7 +87,6 @@ buttonElement.addEventListener('click', () => {
         alert('Вы не выбрали сложность игры')
     } else if (difficultyOfGames === 1) {
         console.log('1 level')
-        setTimeout(flipCardsEasy, 5000)
         gameHtml = `
         <div class="game-page">
             <div class="game-page__header">
@@ -185,40 +100,44 @@ buttonElement.addEventListener('click', () => {
                 <div class="button game-page__button">Начать заново</div>
             </div>
             <div class="game-page__cards game-page__cards-easy">
-                <img class="img1" src=${
+                <img class="img" src=${
                     'img/Cards/' + random1 + '.png'
                 } alt="рубашка карты" />
-                <img class="img1" src=${
+                <img class="img" src=${
                     'img/Cards/' + random2 + '.png'
                 } alt="рубашка карты" />
-                <img class="img1" src=${
-                    'img/Cards/' + random1 + '.png'
-                } alt="рубашка карты" />
-                <img class="img1" src=${
+                <img class="img" src=${
                     'img/Cards/' + random3 + '.png'
                 } alt="рубашка карты" />
-                <img class="img1" src=${
-                    'img/Cards/' + random2 + '.png'
+                <img class="img" src=${
+                    'img/Cards/' + random4 + '.png'
                 } alt="рубашка карты" />
-                <img class="img1" src=${
-                    'img/Cards/' + random3 + '.png'
+                <img class="img" src=${
+                    'img/Cards/' + random5 + '.png'
+                } alt="рубашка карты" />
+                <img class="img" src=${
+                    'img/Cards/' + random6 + '.png'
                 } alt="рубашка карты" />
             </div>
         `
         appEl.innerHTML = gameHtml
 
-        // let imgElements = document.querySelectorAll('img')
+        let imgElements = document.querySelectorAll('img')
 
-        // for (const imgElement of imgElements) {
-        //     imgElement.addEventListener('click', () => {
-        //         imgElement.classList.add('flip')
-        //         imgElement.src = 'img/рубашка.png'
-        //         console.log('rrrr')
-        //     })
-        // }
+        for (const imgElement of imgElements) {
+            imgElement.addEventListener('click', (event) => {
+                console.log(event.detail)
+                imgElement.classList.remove('flip')
+            })
+        }
+        setTimeout(() => {
+            let imgElements = document.querySelectorAll('img')
+            for (const imgElement of imgElements) {
+                imgElement.classList.add('flip')
+            }
+        }, 5000)
     } else if (difficultyOfGames === 2) {
         console.log('2 level')
-        setTimeout(flipCardsMedium, 5000)
         gameHtml = `
         <div class="game-page">
             <div class="game-page__header">
@@ -232,48 +151,60 @@ buttonElement.addEventListener('click', () => {
                 <div class="button game-page__button">Начать заново</div>
             </div>
             <div class="game-page__cards game-page__cards-medium">
-            <img class="img1" src=${
+            <img class="img" src=${
                 'img/Cards/' + random1 + '.png'
             } alt="рубашка карты" />
-            <img class="img1" src=${
+            <img class="img" src=${
                 'img/Cards/' + random2 + '.png'
             } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random1 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
+            <img class="img" src=${
                 'img/Cards/' + random3 + '.png'
             } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random2 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random3 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random6 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random5 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random6 + '.png'
-            } alt="рубашка карты" />
-            <img class="img1" src=${
+            <img class="img" src=${
                 'img/Cards/' + random4 + '.png'
             } alt="рубашка карты" />
-            <img class="img1" src=${
+            <img class="img" src=${
                 'img/Cards/' + random5 + '.png'
             } alt="рубашка карты" />
-            <img class="img1" src=${
-                'img/Cards/' + random4 + '.png'
+            <img class="img" src=${
+                'img/Cards/' + random6 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random7 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random8 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random9 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random10 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random11 + '.png'
+            } alt="рубашка карты" />
+            <img class="img" src=${
+                'img/Cards/' + random12 + '.png'
             } alt="рубашка карты" />
             </div>
         `
         appEl.innerHTML = gameHtml
+        let imgElements = document.querySelectorAll('img')
+
+        for (const imgElement of imgElements) {
+            imgElement.addEventListener('click', () => {
+                imgElement.classList.remove('flip')
+            })
+        }
+        setTimeout(() => {
+            let imgElements = document.querySelectorAll('img')
+            for (const imgElement of imgElements) {
+                imgElement.classList.add('flip')
+            }
+        }, 5000)
     } else if (difficultyOfGames === 3) {
         console.log('3 level')
-        setTimeout(flipCardsDifficult, 5000)
         gameHtml = `
         <div class="game-page">
         <div class="game-page__header">
@@ -287,62 +218,75 @@ buttonElement.addEventListener('click', () => {
             <div class="button game-page__button">Начать заново</div>
         </div>
         <div class="game-page__cards game-page__cards-difficult">
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random1 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random2 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random1 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random3 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random2 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random3 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random6 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random5 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random6 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random4 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random5 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random4 + '.png'
+        <img class="img" src=${
+            'img/Cards/' + random6 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random7 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random8 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random7 + '.png'
-        } alt="рубашка карты" />
-        <img class="img1" src=${
+        <img class="img" src=${
             'img/Cards/' + random9 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random8 + '.png'
+        <img class="img" src=${
+            'img/Cards/' + random10 + '.png'
         } alt="рубашка карты" />
-        <img class="img1" src=${
-            'img/Cards/' + random9 + '.png'
+        <img class="img" src=${
+            'img/Cards/' + random11 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random12 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random13 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random14 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random15 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random16 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random17 + '.png'
+        } alt="рубашка карты" />
+        <img class="img" src=${
+            'img/Cards/' + random18 + '.png'
         } alt="рубашка карты" />
         </div>
         `
         appEl.innerHTML = gameHtml
+        let imgElements = document.querySelectorAll('img')
+
+        for (const imgElement of imgElements) {
+            imgElement.addEventListener('click', () => {
+                imgElement.classList.remove('flip')
+            })
+        }
+        setTimeout(() => {
+            let imgElements = document.querySelectorAll('img')
+            for (const imgElement of imgElements) {
+                imgElement.classList.add('flip')
+            }
+        }, 5000)
     }
 })
