@@ -3,6 +3,26 @@ let difficultyOfGames = 0
 let appEl = document.getElementById('app')
 console.log(appEl)
 
+let seconds = 0
+let timer
+
+function startTimer() {
+    timer = setInterval(function () {
+        seconds++
+        document.getElementById('timer').textContent = seconds
+    }, 1000)
+}
+
+function stopTimer() {
+    clearInterval(timer)
+}
+
+function resetTimer() {
+    stopTimer()
+    seconds = 0
+    document.getElementById('timer').textContent = seconds
+}
+
 appHtml = `<div id="page" class="page">
 <div class="choose-level">
     <h1 class="page__text">Выбери <br>сложность</h1>
@@ -95,7 +115,7 @@ buttonElement.addEventListener('click', () => {
                         <p class="game-page__text">min</p>
                         <p class="game-page__text">sec</p>
                     </div>
-                    <p class="game-page__timer">00.00</p>
+                    <p class="game-page__timer">${startTimer}</p>
                 </div>
                 <div class="button game-page__button">Начать заново</div>
             </div>

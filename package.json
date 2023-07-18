@@ -8,12 +8,13 @@
         "format": "prettier -write .",
         "lint:js": "eslint *.js --fix",
         "lint:css": "stylelint*.css --fix",
-        "build": "NODE_ENV=production webpack",
+        "build": "cross-env NODE_ENV=production webpack",
         "start": "webpack-dev-server --open"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "cross-env": "^7.0.3",
         "lodash": "^4.17.21"
     },
     "devDependencies": {
