@@ -1,7 +1,42 @@
+import './style.css'
+
 let difficultyOfGames = 0
 
 let appEl = document.getElementById('app')
 console.log(appEl)
+
+let minutes = 0
+let seconds = 0
+let timer
+
+function startTimer() {
+    timer = setInterval(function () {
+        seconds++
+        document.getElementById('timer').textContent =
+            seconds < 10 && minutes < 10
+                ? '0' + minutes + ':0' + seconds
+                : seconds < 10 && minutes >= 10
+                ? minutes + ':0' + seconds
+                : seconds >= 10 && minutes < 10
+                ? '0' + minutes + ':' + seconds
+                : minutes + ':' + seconds
+    }, 1000)
+    timer = setInterval(function () {
+        seconds = '0' + (seconds - 60)
+        minutes++
+        document.getElementById('timer').textContent = minutes + ':' + seconds
+    }, 60000)
+}
+
+function stopTimer() {
+    clearInterval(timer)
+}
+
+function resetTimer() {
+    stopTimer()
+    seconds = 0
+    document.getElementById('timer').textContent = seconds
+}
 
 appHtml = `<div id="page" class="page">
 <div class="choose-level">
@@ -87,6 +122,7 @@ buttonElement.addEventListener('click', () => {
         alert('Вы не выбрали сложность игры')
     } else if (difficultyOfGames === 1) {
         console.log('1 level')
+        startTimer()
         gameHtml = `
         <div class="game-page">
             <div class="game-page__header">
@@ -95,7 +131,7 @@ buttonElement.addEventListener('click', () => {
                         <p class="game-page__text">min</p>
                         <p class="game-page__text">sec</p>
                     </div>
-                    <p class="game-page__timer">00.00</p>
+                    <p id="timer" class="game-page__timer">00:00</p>
                 </div>
                 <div class="button game-page__button">Начать заново</div>
             </div>
@@ -153,6 +189,7 @@ buttonElement.addEventListener('click', () => {
         }, 5000)
     } else if (difficultyOfGames === 2) {
         console.log('2 level')
+        startTimer()
         gameHtml = `
         <div class="game-page">
             <div class="game-page__header">
@@ -161,7 +198,7 @@ buttonElement.addEventListener('click', () => {
                         <p class="game-page__text">min</p>
                         <p class="game-page__text">sec</p>
                     </div>
-                    <p class="game-page__timer">00.00</p>
+                    <p id="timer" class="game-page__timer">00:00</p>
                 </div>
                 <div class="button game-page__button">Начать заново</div>
             </div>
@@ -236,6 +273,7 @@ buttonElement.addEventListener('click', () => {
         }, 5000)
     } else if (difficultyOfGames === 3) {
         console.log('3 level')
+        startTimer()
         gameHtml = `
         <div class="game-page">
         <div class="game-page__header">
@@ -244,7 +282,7 @@ buttonElement.addEventListener('click', () => {
                     <p class="game-page__text">min</p>
                     <p class="game-page__text">sec</p>
                 </div>
-                <p class="game-page__timer">00.00</p>
+                <p id="timer" class="game-page__timer">00:00</p>
             </div>
             <div class="button game-page__button">Начать заново</div>
         </div>
