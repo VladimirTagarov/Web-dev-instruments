@@ -1,6 +1,81 @@
 import './style.css'
+import image0 from './img/Cards/0.png'
+import image1 from './img/Cards/1.png'
+import image2 from './img/Cards/2.png'
+import image3 from './img/Cards/3.png'
+import image4 from './img/Cards/4.png'
+import image5 from './img/Cards/5.png'
+import image6 from './img/Cards/6.png'
+import image7 from './img/Cards/7.png'
+import image8 from './img/Cards/8.png'
+import image9 from './img/Cards/9.png'
+import image10 from './img/Cards/10.png'
+import image11 from './img/Cards/11.png'
+import image12 from './img/Cards/12.png'
+import image13 from './img/Cards/13.png'
+import image14 from './img/Cards/14.png'
+import image15 from './img/Cards/15.png'
+import image16 from './img/Cards/16.png'
+import image17 from './img/Cards/17.png'
+import image18 from './img/Cards/18.png'
+import image19 from './img/Cards/19.png'
+import image20 from './img/Cards/20.png'
+import image21 from './img/Cards/21.png'
+import image22 from './img/Cards/22.png'
+import image23 from './img/Cards/23.png'
+import image24 from './img/Cards/24.png'
+import image25 from './img/Cards/25.png'
+import image26 from './img/Cards/26.png'
+import image27 from './img/Cards/27.png'
+import image28 from './img/Cards/28.png'
+import image29 from './img/Cards/29.png'
+import image30 from './img/Cards/30.png'
+import image31 from './img/Cards/31.png'
+import image32 from './img/Cards/32.png'
+import image33 from './img/Cards/33.png'
+import image34 from './img/Cards/34.png'
+import image35 from './img/Cards/35.png'
 
 let difficultyOfGames = 0
+
+let images = [
+    image0,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+    image9,
+    image10,
+    image11,
+    image12,
+    image13,
+    image14,
+    image15,
+    image16,
+    image17,
+    image18,
+    image19,
+    image20,
+    image21,
+    image22,
+    image23,
+    image24,
+    image25,
+    image26,
+    image27,
+    image28,
+    image29,
+    image30,
+    image31,
+    image32,
+    image33,
+    image34,
+    image35,
+]
 
 let appEl = document.getElementById('app')
 console.log(appEl)
@@ -38,7 +113,7 @@ function resetTimer() {
     document.getElementById('timer').textContent = seconds
 }
 
-appHtml = `<div id="page" class="page">
+const appHtml = `<div id="page" class="page">
 <div class="choose-level">
     <h1 class="page__text">Выбери <br>сложность</h1>
     <div class="levels">
@@ -122,6 +197,8 @@ buttonElement.addEventListener('click', () => {
         alert('Вы не выбрали сложность игры')
     } else if (difficultyOfGames === 1) {
         console.log('1 level')
+        console.log(image0)
+        console.log(images)
         startTimer()
         gameHtml = `
         <div class="game-page">
@@ -136,24 +213,13 @@ buttonElement.addEventListener('click', () => {
                 <div class="button game-page__button">Начать заново</div>
             </div>
             <div class="game-page__cards game-page__cards-easy">
-                <img class="img" src=${
-                    'img/Cards/' + random1 + '.png'
+                <img class="img" src=${images[random1]} alt="рубашка карты" />
+                <img class="img" src=${images[random2]} alt="рубашка карты" />
+                <img class="img" src=${images[random3]}
                 } alt="рубашка карты" />
-                <img class="img" src=${
-                    'img/Cards/' + random2 + '.png'
-                } alt="рубашка карты" />
-                <img class="img" src=${
-                    'img/Cards/' + random3 + '.png'
-                } alt="рубашка карты" />
-                <img class="img" src=${
-                    'img/Cards/' + random4 + '.png'
-                } alt="рубашка карты" />
-                <img class="img" src=${
-                    'img/Cards/' + random5 + '.png'
-                } alt="рубашка карты" />
-                <img class="img" src=${
-                    'img/Cards/' + random6 + '.png'
-                } alt="рубашка карты" />
+                <img class="img" src=${images[random4]} alt="рубашка карты" />
+                <img class="img" src=${images[random5]} alt="рубашка карты" />
+                <img class="img" src=${images[random6]} alt="рубашка карты" />
             </div>
         `
         appEl.innerHTML = gameHtml
@@ -172,12 +238,16 @@ buttonElement.addEventListener('click', () => {
                 imgElement.classList.remove('flip')
                 console.log(imgElement.src)
                 console.log(clickCount)
-                if (clickedElements[0].src === clickedElements[1].src) {
-                    alert('вы выиграли, поздравляю')
-                    location.reload()
+                if (clickCount === 2) {
+                    if (clickedElements[0].src === clickedElements[1].src) {
+                        alert('вы выиграли, поздравляю')
+                        location.reload()
+                    } else {
+                        alert('вы проиграли, попробуйте снова')
+                        location.reload()
+                    }
                 } else {
-                    alert('вы проиграли, попробуйте снова')
-                    location.reload()
+                    console.log('Выберите вторую карту')
                 }
             })
         }
@@ -203,42 +273,18 @@ buttonElement.addEventListener('click', () => {
                 <div class="button game-page__button">Начать заново</div>
             </div>
             <div class="game-page__cards game-page__cards-medium">
-            <img class="img" src=${
-                'img/Cards/' + random1 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random2 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random3 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random4 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random5 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random6 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random7 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random8 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random9 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random10 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random11 + '.png'
-            } alt="рубашка карты" />
-            <img class="img" src=${
-                'img/Cards/' + random12 + '.png'
-            } alt="рубашка карты" />
+            <img class="img" src=${image0} alt="рубашка карты" />
+            <img class="img" src=${image1} alt="рубашка карты" />
+            <img class="img" src=${image2} alt="рубашка карты" />
+            <img class="img" src=${image3} alt="рубашка карты" />
+            <img class="img" src=${image4} alt="рубашка карты" />
+            <img class="img" src=${image5} alt="рубашка карты" />
+            <img class="img" src=${image6} alt="рубашка карты" />
+            <img class="img" src=${image7} alt="рубашка карты" />
+            <img class="img" src=${image8} alt="рубашка карты" />
+            <img class="img" src=${image9} alt="рубашка карты" />
+            <img class="img" src=${image10} alt="рубашка карты" />
+            <img class="img" src=${image11} alt="рубашка карты" />
             </div>
         `
         appEl.innerHTML = gameHtml
@@ -256,12 +302,14 @@ buttonElement.addEventListener('click', () => {
                 imgElement.classList.remove('flip')
                 console.log(imgElement.src)
                 console.log(clickCount)
-                if (clickedElements[0].src === clickedElements[1].src) {
-                    alert('вы выиграли, поздравляю')
-                    location.reload()
-                } else {
-                    alert('вы проиграли, попробуйте снова')
-                    location.reload()
+                if (clickCount === 2) {
+                    if (clickedElements[0].src === clickedElements[1].src) {
+                        alert('вы выиграли, поздравляю')
+                        location.reload()
+                    } else {
+                        alert('вы проиграли, попробуйте снова')
+                        location.reload()
+                    }
                 }
             })
         }
@@ -287,60 +335,24 @@ buttonElement.addEventListener('click', () => {
             <div class="button game-page__button">Начать заново</div>
         </div>
         <div class="game-page__cards game-page__cards-difficult">
-        <img class="img" src=${
-            'img/Cards/' + random1 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random2 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random3 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random4 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random5 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random6 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random7 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random8 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random9 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random10 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random11 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random12 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random13 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random14 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random15 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random16 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random17 + '.png'
-        } alt="рубашка карты" />
-        <img class="img" src=${
-            'img/Cards/' + random18 + '.png'
-        } alt="рубашка карты" />
+        <img class="img" src=${image0} alt="рубашка карты" />
+        <img class="img" src=${image1} alt="рубашка карты" />
+        <img class="img" src=${image2} alt="рубашка карты" />
+        <img class="img" src=${image3} alt="рубашка карты" />
+        <img class="img" src=${image4} alt="рубашка карты" />
+        <img class="img" src=${image5} alt="рубашка карты" />
+        <img class="img" src=${image6} alt="рубашка карты" />
+        <img class="img" src=${image7} alt="рубашка карты" />
+        <img class="img" src=${image8} alt="рубашка карты" />
+        <img class="img" src=${image9} alt="рубашка карты" />
+        <img class="img" src=${image10} alt="рубашка карты" />
+        <img class="img" src=${image11} alt="рубашка карты" />
+        <img class="img" src=${image12} alt="рубашка карты" />
+        <img class="img" src=${image13} alt="рубашка карты" />
+        <img class="img" src=${image14} alt="рубашка карты" />
+        <img class="img" src=${image15} alt="рубашка карты" />
+        <img class="img" src=${image16} alt="рубашка карты" />
+        <img class="img" src=${image17} alt="рубашка карты" />
         </div>
         `
         appEl.innerHTML = gameHtml
@@ -358,12 +370,14 @@ buttonElement.addEventListener('click', () => {
                 imgElement.classList.remove('flip')
                 console.log(imgElement.src)
                 console.log(clickCount)
-                if (clickedElements[0].src === clickedElements[1].src) {
-                    alert('вы выиграли, поздравляю')
-                    location.reload()
-                } else {
-                    alert('вы проиграли, попробуйте снова')
-                    location.reload()
+                if (clickCount === 2) {
+                    if (clickedElements[0].src === clickedElements[1].src) {
+                        alert('вы выиграли, поздравляю')
+                        location.reload()
+                    } else {
+                        alert('вы проиграли, попробуйте снова')
+                        location.reload()
+                    }
                 }
             })
         }
