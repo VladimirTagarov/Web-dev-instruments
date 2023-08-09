@@ -191,5 +191,5 @@ body {
     display: none;
 }
 .blur-screen {
-    backdrop-filter: blur(15px);
+    filter: blur(5px);
 }
