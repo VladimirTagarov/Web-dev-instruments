@@ -164,9 +164,8 @@ let appEl: HTMLElement = document.getElementById('app')
 
 let minutes: string | number = 0
 let seconds: string | number = 0
-let timer: ReturnType<typeof setTimeout>
-const timerGaming = document.getElementById('timer')
-const timerText = timerGaming.textContent
+let timer: ReturnType<typeof setTimeout> | any
+let timerContent
 
 function startTimer() {
     timer = setInterval(function () {
@@ -180,6 +179,8 @@ function startTimer() {
                 : seconds >= 10 && Number(minutes) < 10
                 ? '0' + minutes + ':' + seconds
                 : minutes + ':' + seconds
+
+        timerContent = timerGame.textContent
     }, 1000)
     setInterval(function () {
         seconds = '0' + (Number(seconds) - 60)
@@ -211,7 +212,7 @@ const winHtml = `<div id="win-page" class="page">
 <img src=${celebrat}>
 <h1 class="page__text">Вы выиграли!</h1>
 <p class="win__text">Затраченное время</p>
-<p class="win__time">${timer}</p>
+<p class="win__time">${timer ? timer.textContent : undefined}</p>
 <button id="play-again-button" class="button">Играть снова</button>
 </div>
 </div>
@@ -229,7 +230,7 @@ const loseHtml = `<div id="win-page" class="page">
 <img src=${dead}>
 <h1 class="page__text">Вы проиграли!</h1>
 <p class="win__text">Затраченное время</p>
-<p class="win__time">${timer}</p>
+<p class="win__time">${timer ? timer.textContent : timer}</p>
 <button id="play-lose-again-button" class="button">Играть снова</button>
 </div>
 </div>
@@ -244,6 +245,7 @@ playLoseAgainElement.addEventListener('click', () => {
 
 loseEl.classList.add('hidden-screen')
 
+console.log(timerContent)
 console.log(winEl)
 
 winEl.classList.add('hidden-screen')
@@ -258,7 +260,6 @@ let imgElements: HTMLImageElement[] | Element[] = Array.from(nodeListOfImages)
 for (const imgElement of imgElements) {
     imgElement.addEventListener('click', () => {
         imgElement.classList.add('flip')
-        console.log('rrrr')
     })
 }
 
@@ -297,24 +298,24 @@ difficultLevelElement.addEventListener('click', () => {
 
 console.log(difficultyOfGames)
 
-let random1 = Math.floor(Math.random() * 36)
-let random2 = Math.floor(Math.random() * 36)
-let random3 = Math.floor(Math.random() * 36)
-let random4 = Math.floor(Math.random() * 36)
-let random5 = Math.floor(Math.random() * 36)
-let random6 = Math.floor(Math.random() * 36)
-let random7 = Math.floor(Math.random() * 36)
-let random8 = Math.floor(Math.random() * 36)
-let random9 = Math.floor(Math.random() * 36)
-let random10 = Math.floor(Math.random() * 36)
-let random11 = Math.floor(Math.random() * 36)
-let random12 = Math.floor(Math.random() * 36)
-let random13 = Math.floor(Math.random() * 36)
-let random14 = Math.floor(Math.random() * 36)
-let random15 = Math.floor(Math.random() * 36)
-let random16 = Math.floor(Math.random() * 36)
-let random17 = Math.floor(Math.random() * 36)
-let random18 = Math.floor(Math.random() * 36)
+// let random1 = Math.floor(Math.random() * 36)
+// let random2 = Math.floor(Math.random() * 36)
+// let random3 = Math.floor(Math.random() * 36)
+// let random4 = Math.floor(Math.random() * 36)
+// let random5 = Math.floor(Math.random() * 36)
+// let random6 = Math.floor(Math.random() * 36)
+// let random7 = Math.floor(Math.random() * 36)
+// let random8 = Math.floor(Math.random() * 36)
+// let random9 = Math.floor(Math.random() * 36)
+// let random10 = Math.floor(Math.random() * 36)
+// let random11 = Math.floor(Math.random() * 36)
+// let random12 = Math.floor(Math.random() * 36)
+// let random13 = Math.floor(Math.random() * 36)
+// let random14 = Math.floor(Math.random() * 36)
+// let random15 = Math.floor(Math.random() * 36)
+// let random16 = Math.floor(Math.random() * 36)
+// let random17 = Math.floor(Math.random() * 36)
+// let random18 = Math.floor(Math.random() * 36)
 
 const buttonElement = document.getElementById('button')
 buttonElement.addEventListener('click', () => {
@@ -324,6 +325,7 @@ buttonElement.addEventListener('click', () => {
         console.log('1 level')
         console.log(image0)
         console.log(images)
+        // console.log(startTimer())
         startTimer()
         gameHtml = `
         <div class="game-page">
@@ -348,10 +350,10 @@ buttonElement.addEventListener('click', () => {
             </div>
         `
         appEl.innerHTML = gameHtml
-
         const timerGame = document.getElementById('timer') as HTMLElement
         console.log(timerGame.textContent)
-
+        // timerContent = timer.textContent
+        // console.log(timerContent)
         const playAgainElement = document.getElementById('play-again-button')
         playAgainElement.addEventListener('click', () => {
             location.reload()
