@@ -97,51 +97,6 @@ let imagesMedium = generateCards(6)
 let imagesDifficult = generateCards(9)
 console.log(imagesEasy)
 
-// let imagesForEasyLevel: [object, object, object, object, object, object] = [
-//     image0,
-//     image11,
-//     image22,
-//     image0,
-//     image11,
-//     image22,
-// ]
-
-// let imagesForMediumLevel: object[] = [
-//     image2,
-//     image7,
-//     image17,
-//     image21,
-//     image29,
-//     image31,
-//     image2,
-//     image7,
-//     image17,
-//     image21,
-//     image29,
-//     image31,
-// ]
-
-// let imagesForDifficultLevel: object[] = [
-//     image12,
-//     image13,
-//     image28,
-//     image29,
-//     image33,
-//     image34,
-//     image4,
-//     image9,
-//     image0,
-//     image12,
-//     image13,
-//     image28,
-//     image29,
-//     image33,
-//     image34,
-//     image4,
-//     image9,
-//     image0,
-// ]
-
 function shuffleArray(array: object[]) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
