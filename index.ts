@@ -214,15 +214,15 @@ const renderWinScreen = () => {
 <h1 class="page__text">Вы выиграли!</h1>
 <p class="win__text">Затраченное время</p>
 <p id="pwin" class="win__time">${finalWinTime}</p>
-<button id="play-again-button" class="button">Играть снова</button>
+<button id="play-win-again-button" class="button">Играть снова</button>
 </div>
 </div>
 `
 
     winEl.innerHTML = winHtml
 
-    const playAgainElement = document.getElementById('play-again-button')
-    playAgainElement.addEventListener('click', () => {
+    const playWinAgainElement = document.getElementById('play-win-again-button')
+    playWinAgainElement.addEventListener('click', () => {
         location.reload()
     })
 }
@@ -381,9 +381,7 @@ buttonElement.addEventListener('click', () => {
                             stopTimer()
                             let timer = document.getElementById('timer')
                             finalLoseTime = timer.textContent
-                            console.log(finalLoseTime)
                             renderLoseScreen()
-                            // finalLoseTime.innerText = timerGame.textContent
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
                         }
@@ -404,13 +402,21 @@ buttonElement.addEventListener('click', () => {
                             renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                        } else {
-                            winEl.classList.remove('hidden-screen')
-                            appEl.classList.add('blur-screen')
+                        } else if (
+                            clickedElements[4].src === clickedElements[5].src &&
+                            clickedElements[3].src !== clickedElements[4].src
+                        ) {
                             stopTimer()
                             let timer = document.getElementById('timer')
                             finalWinTime = timer.textContent
                             renderWinScreen()
+                            winEl.classList.remove('hidden-screen')
+                            appEl.classList.add('blur-screen')
+                        } else {
+                            alert(
+                                'Возможно вы нажимали несколько раз на одну и ту же карту, количество нажатий на карты не должно превышать количество карт, попробуйте снова!',
+                            )
+                            location.reload()
                         }
                     }
                 })
@@ -480,47 +486,75 @@ buttonElement.addEventListener('click', () => {
 
                     if (clickCount === 2) {
                         if (clickedElements[0].src !== clickedElements[1].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 4) {
                         if (clickedElements[2].src !== clickedElements[3].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 6) {
                         if (clickedElements[4].src !== clickedElements[5].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 8) {
                         if (clickedElements[6].src !== clickedElements[7].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 10) {
                         if (clickedElements[8].src !== clickedElements[9].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 12) {
                         if (
                             clickedElements[10].src !== clickedElements[11].src
                         ) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
+                        } else if (
+                            clickedElements[10].src ===
+                                clickedElements[11].src &&
+                            clickedElements[9].src !== clickedElements[10].src
+                        ) {
                             stopTimer()
-                        } else {
-                            // alert('вы выиграли, поздравляю')
-                            // location.reload()
+                            let timer = document.getElementById('timer')
+                            finalWinTime = timer.textContent
+                            renderWinScreen()
                             winEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
+                        } else {
+                            alert(
+                                'Возможно вы нажимали несколько раз на одну и ту же карту, количество нажатий на карты не должно превышать количество карт, попробуйте снова!',
+                            )
+                            location.reload()
                         }
                     }
                 })
@@ -595,65 +629,108 @@ buttonElement.addEventListener('click', () => {
                     console.log(clickCount)
                     if (clickCount === 2) {
                         if (clickedElements[0].src !== clickedElements[1].src) {
-                            // alert('вы проиграли, попробуйте снова')
-                            // location.reload()
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 4) {
                         if (clickedElements[2].src !== clickedElements[3].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 6) {
                         if (clickedElements[4].src !== clickedElements[5].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 8) {
                         if (clickedElements[6].src !== clickedElements[7].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 10) {
                         if (clickedElements[8].src !== clickedElements[9].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 12) {
                         if (
                             clickedElements[10].src !== clickedElements[11].src
                         ) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 14) {
-                        if (clickedElements[8].src !== clickedElements[9].src) {
+                        if (
+                            clickedElements[12].src !== clickedElements[13].src
+                        ) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 16) {
-                        if (clickedElements[8].src !== clickedElements[9].src) {
+                        if (
+                            clickedElements[14].src !== clickedElements[15].src
+                        ) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 18) {
-                        if (clickedElements[8].src !== clickedElements[9].src) {
+                        if (
+                            clickedElements[16].src !== clickedElements[17].src
+                        ) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
+                        } else if (
+                            clickedElements[16].src !==
+                                clickedElements[17].src &&
+                            clickedElements[15].src !== clickedElements[16].src
+                        ) {
                             stopTimer()
-                        } else {
+                            let timer = document.getElementById('timer')
+                            finalWinTime = timer.textContent
+                            renderWinScreen()
                             winEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
+                        } else {
+                            alert(
+                                'Возможно вы нажимали несколько раз на одну и ту же карту, количество нажатий на карты не должно превышать количество карт, попробуйте снова!',
+                            )
+                            location.reload()
                         }
                     }
                 })
