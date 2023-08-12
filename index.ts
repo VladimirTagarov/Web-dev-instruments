@@ -165,7 +165,7 @@ let appEl: HTMLElement = document.getElementById('app')
 let minutes: string | number = 0
 let seconds: string | number = 0
 let timer: ReturnType<typeof setTimeout> | any
-let timerContent
+let timerContent: string | number
 
 function startTimer() {
     timer = setInterval(function () {
@@ -179,8 +179,6 @@ function startTimer() {
                 : seconds >= 10 && Number(minutes) < 10
                 ? '0' + minutes + ':' + seconds
                 : minutes + ':' + seconds
-
-        timerContent = timerGame.textContent
     }, 1000)
     setInterval(function () {
         seconds = '0' + (Number(seconds) - 60)
@@ -188,8 +186,10 @@ function startTimer() {
         const timerGame = document.getElementById('timer') as HTMLElement
         timerGame.textContent = minutes + ':' + seconds
     }, 60000)
+    timerContent = timer.textContent
 }
 
+let finalTime: string
 function stopTimer() {
     clearInterval(timer)
 }
@@ -207,50 +207,49 @@ const appHtml = `<div id="page" class="page">
 
 appEl.innerHTML = appHtml
 
-const winHtml = `<div id="win-page" class="page">
+const renderWinScreen = () => {
+    const winHtml = `<div id="win-page" class="page">
 <div class="win choose-level">
 <img src=${celebrat}>
 <h1 class="page__text">Вы выиграли!</h1>
 <p class="win__text">Затраченное время</p>
-<p class="win__time">${timer ? timer.textContent : undefined}</p>
+<p id="pwin" class="win__time">${finalWinTime}</p>
 <button id="play-again-button" class="button">Играть снова</button>
 </div>
 </div>
 `
 
-winEl.innerHTML = winHtml
+    winEl.innerHTML = winHtml
 
-const playAgainElement = document.getElementById('play-again-button')
-playAgainElement.addEventListener('click', () => {
-    location.reload()
-})
+    const playAgainElement = document.getElementById('play-again-button')
+    playAgainElement.addEventListener('click', () => {
+        location.reload()
+    })
+}
 
-const loseHtml = `<div id="win-page" class="page">
+const renderLoseScreen = () => {
+    const loseHtml = `<div id="win-page" class="page">
 <div class="win choose-level">
 <img src=${dead}>
 <h1 class="page__text">Вы проиграли!</h1>
 <p class="win__text">Затраченное время</p>
-<p class="win__time">${timer ? timer.textContent : timer}</p>
+<p id="plose" class="win__time">${finalLoseTime}</p>
 <button id="play-lose-again-button" class="button">Играть снова</button>
 </div>
 </div>
 `
 
-loseEl.innerHTML = loseHtml
+    loseEl.innerHTML = loseHtml
 
-const playLoseAgainElement = document.getElementById('play-lose-again-button')
-playLoseAgainElement.addEventListener('click', () => {
-    location.reload()
-})
-
-loseEl.classList.add('hidden-screen')
-
-console.log(timerContent)
-console.log(winEl)
-
-winEl.classList.add('hidden-screen')
-
-// let winPageElement = document.getElementById('')
+    const playLoseAgainElement = document.getElementById(
+        'play-lose-again-button',
+    )
+    playLoseAgainElement.addEventListener('click', () => {
+        location.reload()
+    })
+}
+let finalLoseTime: string | any = document.getElementById('plose')
+let finalWinTime: string | any = document.getElementById('pwin')
 
 let gameHtml: HTMLElement | string
 
@@ -350,8 +349,10 @@ buttonElement.addEventListener('click', () => {
             </div>
         `
         appEl.innerHTML = gameHtml
+
         const timerGame = document.getElementById('timer') as HTMLElement
-        console.log(timerGame.textContent)
+        console.log(timerGame)
+
         // timerContent = timer.textContent
         // console.log(timerContent)
         const playAgainElement = document.getElementById('play-again-button')
@@ -377,25 +378,39 @@ buttonElement.addEventListener('click', () => {
                     console.log(clickCount)
                     if (clickCount === 2) {
                         if (clickedElements[0].src !== clickedElements[1].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            console.log(finalLoseTime)
+                            renderLoseScreen()
+                            // finalLoseTime.innerText = timerGame.textContent
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 4) {
                         if (clickedElements[2].src !== clickedElements[3].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         }
                     } else if (clickCount === 6) {
                         if (clickedElements[4].src !== clickedElements[5].src) {
+                            stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalLoseTime = timer.textContent
+                            renderLoseScreen()
                             loseEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
-                            stopTimer()
                         } else {
                             winEl.classList.remove('hidden-screen')
                             appEl.classList.add('blur-screen')
                             stopTimer()
+                            let timer = document.getElementById('timer')
+                            finalWinTime = timer.textContent
+                            renderWinScreen()
                         }
                     }
                 })
