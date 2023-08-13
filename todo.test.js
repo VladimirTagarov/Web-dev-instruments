@@ -17,6 +17,14 @@ function generateCards(count) {
     return pairs
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
+}
+
 it('Should generate 6 cards', () => {
     const arr = generateCards(3)
     const result = arr.length
@@ -36,4 +44,25 @@ it('Should generate 18 cards', () => {
     const result = arr.length
 
     expect(result).toBe(18)
+})
+
+it('Should shuffle array', () => {
+    const arr = [3, 6, 8, 9, 10, 1, 0]
+
+    const shuffArr = shuffleArray(arr)
+
+    let isDifferent = false
+    for (let i = 0; i < shuffArr.length; i++) {
+        for (let j = i + 1; j < shuffArr.length; j++) {
+            if (shuffArr[i] !== shuffArr[j]) {
+                isDifferent = true
+                break
+            }
+        }
+        if (isDifferent) {
+            break
+        }
+    }
+
+    expect(isDifferent).toBe(true)
 })
