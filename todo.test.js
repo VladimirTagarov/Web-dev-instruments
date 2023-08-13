@@ -47,7 +47,7 @@ it('Should generate 18 cards', () => {
 })
 
 it('Should shuffle array', () => {
-    const arr = [3, 6, 8, 9, 10, 1, 0]
+    const arr = [3, 6, 8, 9, 12, 1, 0]
 
     const shuffArr = shuffleArray(arr)
 
